@@ -1,6 +1,6 @@
 :root {
-    --off-grey: #EBEDF5;
-    --light-grey: #e4e4e4;
+    --light-grey: #e3e3e3;
+    --grey-purple: #eceaf1;;
     --light-purple: #ce70f3;
     --lightish-purple: #9e62ff;
     --purple: #7b00ff;
@@ -195,7 +195,7 @@ input {
 
 input[type="text"], input[type="password"] {
     border: none;
-    background-color: var(--off-grey);
+    background-color: var(--grey-purple);
     padding: 5px 20px;
     width: 250px;
     height: 40px;
@@ -217,4 +217,5 @@ input[type="submit"]:hover {
     transform: scale(1.1) ;
     background-color: var(--lightish-purple);
     box-shadow: 0 4px 10px grey;
+    width: 175px;
 }
