@@ -1,0 +1,104 @@
+:root {
+    --200-nav-color: #be8de0;
+    --350-nav-color: #a364c5;
+    --nav-color: #51325f;
+    --nav-hover-color: #765386;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.nav {
+    height: 40px;
+    background-color: var(--nav-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.nav li {
+    display: inline-block;
+    list-style-type: none;
+    transition: 0.4s ease;
+}
+
+.nav li:hover {
+    translate: 0 -20%;
+    transform: scale(1.2);
+}
+
+.nav a {
+    font-family: Poppins, sans-serif;
+    background-color: var(--nav-color);
+    color: white;
+    width: max-content;
+    padding: 0.4rem 0.7rem;
+    margin: 0.4rem;
+    border-radius: 10px;
+    text-decoration: none;
+   transition: 0.4s;
+    position: relative;
+}
+
+.nav a:hover {
+    background-color: var(--nav-color);
+    box-shadow: 0 4px 6px #2f1244;
+}
+
+.nav a:active {
+    background-color: var(--nav-hover-color);
+}
+
+.nav a::before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(to right, var(--200-nav-color),var(--350-nav-color));
+    border-radius: 5px;
+    height: 2px;
+    width: 0%;
+    bottom: 13%;
+    left: 50%;
+    translate: -50% 0;
+    transition: 0.4s ease;
+    text-align: center;
+}
+
+.nav a:hover::before {
+    width: 80%;
+}
+
+.nav-right a {
+    transition: 0.4s ease;
+}
+
+.nav-right a:hover {
+    padding: 0.4rem 1rem;
+}
+
+.auth {
+    font-size: 0.8em;
+}
+
+.login {
+    margin-left: 2rem;
+}
+
+.login a{
+    margin-right: 0.2rem;
+}
+
+.register a{
+    margin-left: 0.3rem;
+}
+
+.login a, .register a{
+    padding: 0.4rem 0.3rem;
+    transition: 0.4s ease;
+}
+
+.login a:hover, .register a:hover {
+    padding: 0.4rem 0.7rem;
+}
