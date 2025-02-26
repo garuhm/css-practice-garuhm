@@ -1,0 +1,48 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.element {
+    height: 200px;
+    width: 200px;
+    margin: 0px auto;
+    padding: 20px;
+    background: #0071FF;
+    color: white;
+    text-align: center;
+    font-family: Poppins, sans-serif;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    animation: spin 3s ease infinite paused;
+}
+
+.element:hover {
+    animation-play-state: running;
+}
+
+
+@keyframes spin{
+    0%{
+
+    }
+    50% {
+        scale: 1.4;
+        transform: rotate(0);
+        border-radius: 0;
+    }
+    100%{
+        transform: rotate(360deg);
+        scale: 1.4;
+        border-radius: 50%;
+    }
+}
