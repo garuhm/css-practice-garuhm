@@ -1,0 +1,41 @@
+* {
+    font-family: Poppins, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    gap: 5px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.container div {
+    background-color: rgb(19, 19, 19);
+    border: solid 3px rgb(69, 69, 69);
+    border-radius: 20px;
+    width: min(325px, 50%);
+    height: fit-content;
+    margin: 7px;
+    padding: 35px 30px;
+}
+
+h2 {
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 0.78em;
+}
