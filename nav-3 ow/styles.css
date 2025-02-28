@@ -1,3 +1,27 @@
+/* @link https://utopia.fyi/type/calculator?c=320,15,1.18,1240,20,1.24,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+/* @link https://utopia.fyi/type/calculator?c=667,15,1.18,1240,20,1.24,6,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+:root {
+    --step--2: clamp(0.6733rem, 0.5107rem + 0.39vw, 0.813rem);
+    --step--1: clamp(0.7945rem, 0.5459rem + 0.5964vw, 1.0081rem);
+    --step-0: clamp(0.9375rem, 0.5737rem + 0.8726vw, 1.25rem);
+    --step-1: clamp(1.1063rem, 0.5897rem + 1.2391vw, 1.55rem);
+    --step-2: clamp(1.3054rem, 0.5876rem + 1.7218vw, 1.922rem);
+    --step-3: clamp(1.5403rem, 0.5591rem + 2.3538vw, 2.3833rem);
+    --step-4: clamp(1.8176rem, 0.4933rem + 3.1767vw, 2.9553rem);
+    --step-5: clamp(2.1448rem, 0.3757rem + 4.2437vw, 3.6645rem);
+    --step-6: clamp(2.5308rem, 0.1874rem + 5.6215vw, 4.544rem);
+
+    --main-color: #504a86;
+    --light-color: #F3F5FF;
+    --light-accent: #938BC1;
+    --dark-accent: #6B7BB6;
+    --darker-accent: #323b5b;
+    --dark-color: #1A1A2E;
+
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +30,7 @@
 
 nav {
     height: 60px;
-    background-color: black;
+    background-color: var(--dark-color);
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -15,6 +39,7 @@ nav {
 .links {
     height: 100%;
     width: 100%;
+    margin: 0 0 0 3vw;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -27,29 +52,30 @@ nav {
     height: 100%;
     padding: 0 20px;
     text-decoration: none;
-    color: white;
+    color: var(--light-color);
     transition: 0.3s ease;
     position: relative;
 }
 
 .links a:hover {
-    background-color: #f7703a;
+    background-color: var(--darker-accent);
 }
 
 .links a::before {
     content: "";
-    background: white;
+    border-radius: 100px;
+    background: linear-gradient(to left, var(--light-color), var(--light-accent));
     position: absolute;
     width: 0%;
-    height: 2px;
+    height: 3.5px;
     left: 50%;
-    bottom: 25%;
+    bottom: 0%;
     translate: -50% 0;
     transition: 0.3s ease;
 }
 
 .links a:hover::before {
-    width: 65%;
+    width: 100%;
 }
 
 #home-link {
@@ -65,11 +91,12 @@ nav {
 }
 
 nav svg {
-    fill: white;
+    fill: var(--light-color);
 }
 
-@media(max-width: 600px){
+@media(max-width: 450px){
     .links {
+        margin: 0;
         flex-direction: column;
         align-items: flex-end;
 
@@ -79,7 +106,7 @@ nav svg {
         z-index: 10;
         width: 150px;
 
-        background-color: black;
+        background-color: var(--dark-color);
         transition: 0.75s ease-out;
     }
     .links a{
@@ -91,10 +118,7 @@ nav svg {
     }
     .links a:hover {
         transform: scale(1.2);
-        background-color: #f7703a;
-    }
-    .links a:hover::before {
-        width: 35%;
+        background-color: var(--darker-accent);
     }
     #open, #close {
         padding: 20px;
@@ -109,7 +133,7 @@ nav svg {
         z-index: 9;
     }
     #sidebar-active:checked ~ .links{
-        left: 0
+        left: 0%
     }
 
 }
@@ -117,13 +141,38 @@ nav svg {
 /* HOME */
 
 header {
-    background-color: #f7703a;
+    position: relative;
     padding-top: 75px;
     padding-bottom: 35px;
     text-align: center;
+    color: white;
+    overflow: hidden;
+    border-bottom: 4px solid #7a7a7a4d;
 }
-header h1{
-    font-size: max(70px, 30px);
+
+@media(max-width: 474px){
+    header {
+        padding-top: var(--step-4);
+    }
+}
+
+.hero-img {
+    background-image: url("./imgs/hero-bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: scale(1.1);
+    filter: blur(0.3em);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.hero-content h1{
+    font-size: var(--step-6);
     line-height: 1.4em;
     font-weight: 800;
     margin: 0 50px;
@@ -132,10 +181,14 @@ header h1{
     justify-content: center;
 }
 
-header p {
-    font-size: 20px;
+.hero-content p {
+    font-size: var(--step-0);
     display: flex;
     justify-content: center;
     margin: 0 20vw;
     margin-top: 25px;
+}
+
+.hero-content p, .hero-content h1{
+    text-shadow: 0px 2px 10px #000000
 }
