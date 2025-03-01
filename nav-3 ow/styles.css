@@ -39,7 +39,7 @@ nav {
 .links {
     height: 100%;
     width: 100%;
-    margin: 0 0 0 3vw;
+    margin: 0 2vw;
     display: flex;
     flex-direction: row;
     align-items: center;
